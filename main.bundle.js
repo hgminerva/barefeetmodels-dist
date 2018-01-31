@@ -164,13 +164,15 @@ var _a, _b, _c, _d, _e;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__profile_profile_component__ = __webpack_require__("../../../../../src/app/profile/profile.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__shared_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/shared/navbar/navbar.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__shared_footer_footer_component__ = __webpack_require__("../../../../../src/app/shared/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__home_home_module__ = __webpack_require__("../../../../../src/app/home/home.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__home_home_module__ = __webpack_require__("../../../../../src/app/home/home.module.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -199,7 +201,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_9__login_login_component__["a" /* LoginComponent */],
             __WEBPACK_IMPORTED_MODULE_10__profile_profile_component__["a" /* ProfileComponent */],
             __WEBPACK_IMPORTED_MODULE_11__shared_navbar_navbar_component__["a" /* NavbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__shared_footer_footer_component__["a" /* FooterComponent */]
+            __WEBPACK_IMPORTED_MODULE_12__shared_footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__dashboard_dashboard_component__["a" /* DashboardComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -207,7 +210,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */],
             __WEBPACK_IMPORTED_MODULE_5__app_routing__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_13__home_home_module__["a" /* HomeModule */]
+            __WEBPACK_IMPORTED_MODULE_14__home_home_module__["a" /* HomeModule */]
         ],
         providers: [],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
@@ -228,11 +231,12 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__profile_profile_component__ = __webpack_require__("../../../../../src/app/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__signup_signup_component__ = __webpack_require__("../../../../../src/app/signup/signup.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__landing_landing_component__ = __webpack_require__("../../../../../src/app/landing/landing.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_nucleoicons_nucleoicons_component__ = __webpack_require__("../../../../../src/app/components/nucleoicons/nucleoicons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile_component__ = __webpack_require__("../../../../../src/app/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__signup_signup_component__ = __webpack_require__("../../../../../src/app/signup/signup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__landing_landing_component__ = __webpack_require__("../../../../../src/app/landing/landing.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_nucleoicons_nucleoicons_component__ = __webpack_require__("../../../../../src/app/components/nucleoicons/nucleoicons.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -249,13 +253,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_4__home_home_component__["a" /* HomeComponent */] },
-    { path: 'user-profile', component: __WEBPACK_IMPORTED_MODULE_5__profile_profile_component__["a" /* ProfileComponent */] },
-    { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_6__signup_signup_component__["a" /* SignupComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__login_login_component__["a" /* LoginComponent */] },
-    { path: 'landing', component: __WEBPACK_IMPORTED_MODULE_8__landing_landing_component__["a" /* LandingComponent */] },
-    { path: 'nucleoicons', component: __WEBPACK_IMPORTED_MODULE_9__components_nucleoicons_nucleoicons_component__["a" /* NucleoiconsComponent */] },
+    { path: 'user-profile', component: __WEBPACK_IMPORTED_MODULE_6__profile_profile_component__["a" /* ProfileComponent */] },
+    { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_7__signup_signup_component__["a" /* SignupComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_8__login_login_component__["a" /* LoginComponent */] },
+    { path: 'landing', component: __WEBPACK_IMPORTED_MODULE_9__landing_landing_component__["a" /* LandingComponent */] },
+    { path: 'nucleoicons', component: __WEBPACK_IMPORTED_MODULE_10__components_nucleoicons_nucleoicons_component__["a" /* NucleoiconsComponent */] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__["a" /* DashboardComponent */] },
     { path: '', redirectTo: 'landing', pathMatch: 'full' }
 ];
 var AppRoutingModule = (function () {
@@ -827,6 +833,47 @@ TypographyComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/dashboard/dashboard.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <div class=\"row example-page\">\n                <video width=\"100%\" height=\"600\" controls>\n                    <source src=\"https://barefeetmodels.blob.core.windows.net/video-2018/20180110_231909000_iOS.mov\"  \n                            type='video/mp4; codecs=\"avc1.42e01e, mp4a.40.2\"'>\n                </video>\n            </div>\n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/dashboard.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DashboardComponent = (function () {
+    function DashboardComponent() {
+    }
+    DashboardComponent.prototype.ngOnInit = function () { };
+    return DashboardComponent;
+}());
+DashboardComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-dashboard',
+        template: __webpack_require__("../../../../../src/app/dashboard/dashboard.component.html")
+    }),
+    __metadata("design:paramtypes", [])
+], DashboardComponent);
+
+//# sourceMappingURL=dashboard.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
@@ -944,7 +991,7 @@ HomeModule = __decorate([
 /***/ "../../../../../src/app/landing/landing.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header\" data-parallax=\"true\" style=\"background-image: url('../assets/img/bg1.jpg');\">\n    <div class=\"filter\"></div>\n    <div class=\"container\">\n        <div class=\"motto text-center\">\n            <h3>Welcome to Barefeetmodels.com, the premier feet fetish website! </h3>\n            <h3>Featuring exclusive videos in high definition!</h3>\n            <br />\n            <a [routerLink]=\"['/login']\" class=\"btn btn-outline-neutral btn-round\"><i class=\"fa fa-play\"></i>Watch video</a>\n        </div>\n    </div>\n</div>\n\n<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <div class=\"row example-page\">\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\n                    <a [routerLink]=\"['/login']\">\n                        <img src=\"../../assets/img/examples/e1.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\n                        <p>Haylie was a ballerina and gymnast ! Her feet are breath taking she’s a 19 year old college girl and model ! It’s like a Barbie doll came to life and took off her shoes ! In this video I pour baby oil gel all over her feet as she shows off her incredible toe spread and tight scrunches </p>\n                    </a>\n                </div>\n\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\n                    <a [routerLink]=\"['/login']\">\n                        <img src=\"../../assets/img/examples/e2.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\n                        <p>This is Nicole from the video “ super sole show “ I shot this so her fans can get the full effect of how amazing here feet are . She’s a 19 ur old babe with size 9 soles !</p>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n"
+module.exports = "<div class=\"page-header\" data-parallax=\"true\" style=\"background-image: url('../assets/img/bg1.jpg');\">\n    <div class=\"filter\"></div>\n    <div class=\"container\">\n        <div class=\"motto text-center\">\n            <h3>Welcome to Barefeetmodels.com, the premier feet fetish website! </h3>\n            <h3>Featuring exclusive videos in high definition!</h3>\n            <br />\n            <a [routerLink]=\"['/dashboard']\" class=\"btn btn-outline-neutral btn-round\"><i class=\"fa fa-play\"></i>Watch video</a>\n        </div>\n    </div>\n</div>\n\n<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <div class=\"row example-page\">\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\n                    <a [routerLink]=\"['/login']\">\n                        <img src=\"../../assets/img/examples/e1.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\n                        <p>Haylie was a ballerina and gymnast ! Her feet are breath taking she’s a 19 year old college girl and model ! It’s like a Barbie doll came to life and took off her shoes ! In this video I pour baby oil gel all over her feet as she shows off her incredible toe spread and tight scrunches </p>\n                    </a>\n                </div>\n\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\n                    <a [routerLink]=\"['/login']\">\n                        <img src=\"../../assets/img/examples/e2.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\n                        <p>This is Nicole from the video “ super sole show “ I shot this so her fans can get the full effect of how amazing here feet are . She’s a 19 ur old babe with size 9 soles !</p>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n"
 
 /***/ }),
 
