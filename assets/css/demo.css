@@ -824,6 +824,10 @@ pre.prettyprint {
     background-color: #333;
 }
 
+.section-true-black {
+    background-color: rgb(0, 0, 0);
+}
+
 #layerHover {
     top: 30px;
 }
