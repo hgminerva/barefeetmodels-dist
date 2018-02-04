@@ -685,6 +685,9 @@ var PurchaseComponent = (function () {
     function PurchaseComponent() {
     }
     PurchaseComponent.prototype.ngOnInit = function () { };
+    PurchaseComponent.prototype.btnPurchaseClick = function () {
+        window.location.href = 'https://www.magentatrader.com/purchase/autoredirect';
+    };
     return PurchaseComponent;
 }());
 PurchaseComponent = __decorate([
