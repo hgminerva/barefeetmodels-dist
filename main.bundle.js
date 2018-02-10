@@ -377,6 +377,7 @@ var _a, _b, _c, _d, _e;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/shared/navbar/navbar.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__shared_footer_footer_component__ = __webpack_require__("../../../../../src/app/shared/footer/footer.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__account_account_service__ = __webpack_require__("../../../../../src/app/account/account.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__dashboard_dashboard_service__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -413,6 +414,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 // import { HomeModule } from './home/home.module';
 // my services
 
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -441,6 +443,7 @@ AppModule = __decorate([
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_19__account_account_service__["a" /* AccountService */],
+            __WEBPACK_IMPORTED_MODULE_20__dashboard_dashboard_service__["a" /* DashboardService */],
             { provide: __WEBPACK_IMPORTED_MODULE_9_ng2_toastr__["ToastOptions"], useClass: __WEBPACK_IMPORTED_MODULE_10__app_toast_options__["a" /* AppToastOptions */] }
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_16__app_component__["a" /* AppComponent */]]
@@ -552,7 +555,7 @@ var AppToastOptions = (function (_super) {
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <div class=\"row example-page\">\n                <video width=\"100%\" height=\"600\" controls>\n                    <source src=\"https://barefeetmodels.blob.core.windows.net/video-2018/20180110_231909000_iOS.mov\"  \n                            type='video/mp4; codecs=\"avc1.42e01e, mp4a.40.2\"'>\n                </video>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <h1>&nbsp;</h1>\n            <div class=\"row\">\n                <div class=\"col-lg-8\" style=\"vertical-align: top;\">\n                    <h5>{{videoTitle}}</h5>\n                    <video width=\"100%\" height=\"350\" controls #videoPlayer id=\"videoPlayer\" poster=\"../assets/img/loading1.gif\">\n                        <source type='video/mp4; codecs=\"avc1.42e01e, mp4a.40.2\"'>\n                    </video>\n                    <p><small>{{videoDescription}}</small></p>\n                </div>\n                <div class=\"col-lg-4\">\n                    <ul class=\"list-unstyled\">\n                        <li class=\"media\" *ngFor=\"let video of videos\">\n                            <img class=\"d-flex mr-3\" (click)=\"viewVideo(video.id)\" src={{video.fileGifUrl}} style=\"width:100px;height:60px;\">\n                            <div class=\"media-body\">\n                                <a (click)=\"viewVideo(video.id)\"><h5 class=\"mt-0 mb-1\">{{video.title}}</h5></a>\n                                <p><small>{{video.description.substring(0, 50)+\"...\"}}</small></p>\n                                <p><small>&nbsp;</small></p>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -563,6 +566,7 @@ module.exports = "<div class=\"main\">\n    <div class=\"section section-dark\">
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard_service__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -574,13 +578,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var DashboardComponent = (function () {
-    function DashboardComponent(router) {
+    function DashboardComponent(router, dashboardService) {
         this.router = router;
+        this.dashboardService = dashboardService;
+        this.videos = new Array();
+        this.videoTitle = "";
+        this.videoDescription = "";
     }
     DashboardComponent.prototype.ngOnInit = function () {
         if (localStorage.getItem("username") == null) {
             this.router.navigate(['/']);
+        }
+        else {
+            this.getVideos();
+        }
+    };
+    DashboardComponent.prototype.ngOnDestroy = function () {
+        if (this.videosSub != null)
+            this.videosSub.unsubscribe();
+    };
+    DashboardComponent.prototype.getVideos = function () {
+        var _this = this;
+        this.dashboardService.getVideos();
+        this.videosSub = this.dashboardService.videosObservable.subscribe(function (data) {
+            if (data.length > 0) {
+                _this.videos = data;
+                _this.viewVideo(_this.videos[0]["id"]);
+            }
+        });
+    };
+    DashboardComponent.prototype.viewVideo = function (id) {
+        for (var i = 0; i <= this.videos.length - 1; i++) {
+            if (this.videos[i]["id"] == id) {
+                var videoPlayer = document.getElementById("videoPlayer");
+                videoPlayer.src = this.videos[i]["fileUrl"];
+                videoPlayer.load();
+                videoPlayer.play();
+                this.videoTitle = this.videos[i]["title"];
+                this.videoDescription = this.videos[i]["description"];
+            }
         }
     };
     return DashboardComponent;
@@ -590,11 +628,88 @@ DashboardComponent = __decorate([
         selector: 'app-dashboard',
         template: __webpack_require__("../../../../../src/app/dashboard/dashboard.component.html")
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__dashboard_service__["a" /* DashboardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__dashboard_service__["a" /* DashboardService */]) === "function" && _b || Object])
 ], DashboardComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=dashboard.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/dashboard/dashboard.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__("../../../../rxjs/Subject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var DashboardService = (function () {
+    function DashboardService(router, http) {
+        this.router = router;
+        this.http = http;
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({
+            'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
+            'Content-Type': 'application/json'
+        });
+        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: this.headers });
+        this.videosSource = new __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__["Subject"]();
+        this.videosObservable = this.videosSource.asObservable();
+    }
+    DashboardService.prototype.getVideos = function () {
+        var _this = this;
+        var url = "https://barefeetmodels-api.azurewebsites.net/api/MstVideo/List";
+        var videos = new Array();
+        this.http.get(url, this.options).subscribe(function (response) {
+            var results = response.json();
+            if (results.length > 0) {
+                for (var i = 0; i <= results.length - 1; i++) {
+                    videos.push({
+                        id: results[i]["Id"],
+                        title: results[i]["Title"],
+                        description: results[i]["Description"],
+                        dateUploaded: results[i]["DateUploaded"],
+                        modelId: results[i]["ModelId"],
+                        model: results[i]["Model"],
+                        fileName: results[i]["FileName"],
+                        fileUrl: results[i]["FileUrl"],
+                        fileSizeInKb: results[i]["FileSizeInKb"],
+                        fileSizeInBytes: results[i]["FileSizeInBytes"],
+                        file: results[i]["File"],
+                        fileGifUrl: results[i]["FileGifUrl"]
+                    });
+                }
+                _this.videosSource.next(videos);
+            }
+            else {
+                _this.videosSource.next(videos);
+            }
+        });
+    };
+    return DashboardService;
+}());
+DashboardService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object])
+], DashboardService);
+
+var _a, _b;
+//# sourceMappingURL=dashboard.service.js.map
 
 /***/ }),
 
