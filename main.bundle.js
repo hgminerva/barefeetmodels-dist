@@ -20,7 +20,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /***/ "../../../../../src/app/account/account.login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\r\n    <div class=\"page-header\" style=\"background-image: url('../assets/img/bg1.jpg');\">\r\n        <div class=\"filter\"></div>\r\n            <div class=\"container\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-4 col-sm-6 mr-auto ml-auto\">\r\n                        <div class=\"card card-register\">\r\n                            <h3 class=\"title\">Welcome</h3>\r\n                            \r\n                            <label>Username</label>\r\n                            <input type=\"text\" [(ngModel)]=\"user.username\" class=\"form-control\">\r\n\r\n                            <label>Password</label>\r\n                            <input type=\"password\" [(ngModel)]=\"user.password\" class=\"form-control\">\r\n                            <button class=\"btn btn-danger btn-block btn-round\" (click)=\"btnLoginClick()\">Login</button>\r\n                        \r\n                            <div class=\"forgot\">\r\n                                <a href=\"#\" class=\"btn btn-link btn-danger\">Forgot password?</a>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"footer register-footer text-center\">\r\n                    <h6>&copy;{{loginDate | date: 'yyyy'}} Barefeetmodels.com</h6>\r\n                </div>\r\n            </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"wrapper\">\n    <div class=\"page-header\" style=\"background-image: url('../assets/img/bg1.jpg');\">\n        <div class=\"filter\"></div>\n            <div class=\"container\">\n                <div class=\"row\">\n                    <div class=\"col-lg-4 col-sm-6 mr-auto ml-auto\">\n                        <div class=\"card card-register\">\n                            <h3 class=\"title\">Welcome</h3>\n                            \n                            <label>Username</label>\n                            <input type=\"text\" [(ngModel)]=\"user.username\" class=\"form-control\">\n\n                            <label>Password</label>\n                            <input type=\"password\" [(ngModel)]=\"user.password\" class=\"form-control\">\n                            <button class=\"btn btn-danger btn-block btn-round\" (click)=\"btnLoginClick()\">Login</button>\n                        \n                            <div class=\"forgot\">\n                                <a href=\"#\" class=\"btn btn-link btn-danger\">Forgot password?</a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"footer register-footer text-center\">\n                    <h6>&copy;{{loginDate | date: 'yyyy'}} Barefeetmodels.com</h6>\n                </div>\n            </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -102,7 +102,7 @@ var AccountLoginComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/account/account.logout.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\r\n    <div class=\"page-header\" style=\"background-image: url('../assets/img/bg1.jpg');\">\r\n        <div class=\"filter\"></div>\r\n            <div class=\"container\">\r\n            </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"wrapper\">\n    <div class=\"page-header\" style=\"background-image: url('../assets/img/bg1.jpg');\">\n        <div class=\"filter\"></div>\n            <div class=\"container\">\n            </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -224,7 +224,7 @@ var AccountService = /** @class */ (function () {
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\r\n<router-outlet></router-outlet>\r\n<app-footer *ngIf=\"removeFooter()\"></app-footer>\r\n"
+module.exports = "<app-navbar></app-navbar>\n<router-outlet></router-outlet>\n<app-footer *ngIf=\"removeFooter()\"></app-footer>\n"
 
 /***/ }),
 
@@ -581,7 +581,7 @@ var AppToastOptions = /** @class */ (function (_super) {
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\r\n    <div class=\"section section-dark\">\r\n        <div class=\"container\">\r\n            <h1>&nbsp;</h1>\r\n            <div class=\"row\">\r\n                <div class=\"col-lg-8\" style=\"vertical-align: top;\">\r\n                    <h5>{{videoTitle}}</h5>\r\n                    <video width=\"100%\" height=\"350\" controls #videoPlayer id=\"videoPlayer\" poster=\"../assets/img/loading1.gif\">\r\n                        <source type='video/mp4; codecs=\"avc1.42e01e, mp4a.40.2\"'>\r\n                    </video>\r\n                    <p><small>{{videoDescription}}</small></p>\r\n                </div>\r\n                <div class=\"col-lg-4\">\r\n                    <ul class=\"list-unstyled\">\r\n                        <li class=\"media\" *ngFor=\"let video of videos\">\r\n                            <img class=\"d-flex mr-3\" (click)=\"viewVideo(video.id)\" src={{video.fileGifUrl}} style=\"width:100px;height:60px;\">\r\n                            <div class=\"media-body\">\r\n                                <a (click)=\"viewVideo(video.id)\"><h5 class=\"mt-0 mb-1\">{{video.title}}</h5></a>\r\n                                <p><small>{{video.description.substring(0, 50)+\"...\"}}</small></p>\r\n                                <p><small>&nbsp;</small></p>\r\n                            </div>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <h1>&nbsp;</h1>\n            <div class=\"row\">\n                <div class=\"col-lg-8\" style=\"vertical-align: top;\">\n                    <h5>{{videoTitle}}</h5>\n                    <video width=\"100%\" height=\"350\" controls #videoPlayer id=\"videoPlayer\" poster=\"../assets/img/loading1.gif\">\n                        <source type='video/mp4; codecs=\"avc1.42e01e, mp4a.40.2\"'>\n                    </video>\n                    <p><small>{{videoDescription}}</small></p>\n                </div>\n                <div class=\"col-lg-4\">\n                    <ul class=\"list-unstyled\">\n                        <li class=\"media\" *ngFor=\"let video of videos\">\n                            <img class=\"d-flex mr-3\" (click)=\"viewVideo(video.id)\" src={{video.fileGifUrl}} style=\"width:100px;height:60px;\">\n                            <div class=\"media-body\">\n                                <a (click)=\"viewVideo(video.id)\"><h5 class=\"mt-0 mb-1\">{{video.title}}</h5></a>\n                                <p><small>{{video.description.substring(0, 50)+\"...\"}}</small></p>\n                                <p><small>&nbsp;</small></p>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -683,7 +683,7 @@ var DashboardComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/dashboard/dashboard.detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\r\n        <div class=\"section section-dark\">\r\n            <div class=\"container\">\r\n                <br>\r\n                <br>\r\n                <vg-player *ngIf=\"video.fileUrl\">\r\n                    <video [vgMedia]=\"media\" #media id=\"singleVideo\" preload=\"auto\" autoplay=\"true\" controls>\r\n                        <source [src]=video.fileUrl type=\"video/mp4\">\r\n                    </video>\r\n                </vg-player>\r\n            </div>\r\n        </div>\r\n    </div>"
+module.exports = "<div class=\"main\">\n        <div class=\"section section-dark\">\n            <div class=\"container\">\n                <br>\n                <br>\n                <vg-player *ngIf=\"video.fileUrl\">\n                    <video [vgMedia]=\"media\" #media id=\"singleVideo\" preload=\"auto\" autoplay=\"true\" controls>\n                        <source [src]=video.fileUrl type=\"video/mp4\">\n                    </video>\n                </vg-player>\n            </div>\n        </div>\n    </div>"
 
 /***/ }),
 
@@ -750,7 +750,7 @@ var DashboardDetailComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/dashboard/dashboard.list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\r\n    <div class=\"section section-dark\">\r\n        <div class=\"container\">\r\n            <br>\r\n            <br>\r\n            <ul id=\"videoList\">\r\n                <li *ngFor=\"let video of videos\">\r\n                    <a [routerLink]=\"['/dashboardDetail',video.id]\">\r\n                        <img src=\"{{video.fileGifUrl}}\" class=\"tn\" width=\"200\" height=\"160\">\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n            <div class=\"text-center\">\r\n                <button [hidden]=\"isBtnLoadMoreVideosHidden\" class=\"btn btn-success btn-round\" id=\"btnLoadMoreVideos\" (click)=\"btnLoadMoreVideosClick()\">Load more videos...</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <br>\n            <br>\n            <ul id=\"videoList\">\n                <li *ngFor=\"let video of videos\">\n                    <a [routerLink]=\"['/dashboardDetail',video.id]\">\n                        <img src=\"{{video.fileGifUrl}}\" class=\"tn\" width=\"200\" height=\"160\">\n                    </a>\n                </li>\n            </ul>\n            <div class=\"text-center\">\n                <button class=\"btn btn-success btn-round\" id=\"btnLoadMoreVideos\" (click)=\"btnLoadMoreVideosClick()\">Load more videos...</button>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -761,7 +761,11 @@ module.exports = "<div class=\"main\">\r\n    <div class=\"section section-dark\
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardListComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard_service__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_takeUntil__ = __webpack_require__("../../../../rxjs/add/operator/takeUntil.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_takeUntil___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_takeUntil__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_takeWhile__ = __webpack_require__("../../../../rxjs/add/operator/takeWhile.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_takeWhile___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_takeWhile__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dashboard_service__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -774,6 +778,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var DashboardListComponent = /** @class */ (function () {
     function DashboardListComponent(router, dashboardService) {
         this.router = router;
@@ -782,7 +788,6 @@ var DashboardListComponent = /** @class */ (function () {
         this.videoTitle = "";
         this.videoDescription = "";
         this.skipNumber = 0;
-        this.isBtnLoadMoreVideosHidden = true;
     }
     DashboardListComponent.prototype.ngOnInit = function () {
         if (localStorage.getItem("username") == null) {
@@ -801,7 +806,6 @@ var DashboardListComponent = /** @class */ (function () {
         this.dashboardService.getVideos(this.skipNumber);
         this.videosSub = this.dashboardService.videosObservable.subscribe(function (data) {
             if (data.length > 0) {
-                _this.isBtnLoadMoreVideosHidden = false;
                 for (var i = 0; i <= data.length - 1; i++) {
                     _this.videos.push({
                         id: data[i]["id"],
@@ -866,7 +870,7 @@ var DashboardListComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/dashboard/dashboard.list.component.html"),
             styles: [__webpack_require__("../../../../../src/app/dashboard/dashboard.component.scss")]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__dashboard_service__["a" /* DashboardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__dashboard_service__["a" /* DashboardService */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__dashboard_service__["a" /* DashboardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__dashboard_service__["a" /* DashboardService */]) === "function" && _b || Object])
     ], DashboardListComponent);
     return DashboardListComponent;
     var _a, _b;
@@ -988,7 +992,7 @@ var DashboardService = /** @class */ (function () {
 /***/ "../../../../../src/app/landing/landing.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header\" data-parallax=\"true\" style=\"background-image: url('../assets/img/bg1.jpg');\">\r\n    <div class=\"filter\"></div>\r\n    <div class=\"container\">\r\n        <div class=\"motto text-center\">\r\n            <h3>Welcome to Barefeetmodels.com, the premier feet fetish website! </h3>\r\n            <h3>Featuring exclusive videos in high definition!</h3>\r\n            <br />\r\n            <a [routerLink]=\"['/dashboard']\" class=\"btn btn-outline-neutral btn-round\"><i class=\"fa fa-play\"></i>Watch video</a>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"main\">\r\n    <div class=\"section section-dark\">\r\n        <div class=\"container\">\r\n            <div class=\"row example-page\">\r\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\r\n                    <a [routerLink]=\"['/login']\">\r\n                        <img src=\"../../assets/img/examples/e1.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\r\n                        <p>Haylie was a ballerina and gymnast ! Her feet are breath taking she’s a 19 year old college girl and model ! It’s like a Barbie doll came to life and took off her shoes ! In this video I pour baby oil gel all over her feet as she shows off her incredible toe spread and tight scrunches </p>\r\n                    </a>\r\n                </div>\r\n\r\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\r\n                    <a [routerLink]=\"['/login']\">\r\n                        <img src=\"../../assets/img/examples/e2.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\r\n                        <p>This is Nicole from the video “ super sole show “ I shot this so her fans can get the full effect of how amazing here feet are . She’s a 19 ur old babe with size 9 soles !</p>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n"
+module.exports = "<video autoplay muted loop id=\"myVideo\">\n    <source src=\"../../assets/videos/bg-video-2.mp4\" type=\"video/mp4\"> Your browser does not support HTML5 video.\n</video>\n<div class=\"content\">\n    <div class=\"container\">\n        <h2>Welcome to Barefeetmodels.com, the premier feet fetish website! </h2>\n        <h4>Featuring exclusive videos in high definition!</h4>\n        <br /><br />\n        <a [routerLink]=\"['/dashboard']\" class=\"btn btn-outline-neutral btn-round\">\n            <i class=\"fa fa-play\"></i> Watch video\n        </a>\n    </div>\n</div>\n\n<!-- <div class=\"page-header\" data-parallax=\"true\" style=\"background-image: url('../assets/img/bg1.jpg');\">\n    <div class=\"filter\"></div>\n    \n</div> -->\n<!-- \n<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <div class=\"row example-page\">\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\n                    <a [routerLink]=\"['/login']\">\n                        <img src=\"../../assets/img/examples/e1.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\n                        <p>Haylie was a ballerina and gymnast ! Her feet are breath taking she’s a 19 year old college girl and model ! It’s like a Barbie doll came to life and took off her shoes ! In this video I pour baby oil gel all over her feet as she shows off her incredible toe spread and tight scrunches </p>\n                    </a>\n                </div>\n\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\n                    <a [routerLink]=\"['/login']\">\n                        <img src=\"../../assets/img/examples/e2.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\n                        <p>This is Nicole from the video “ super sole show “ I shot this so her fans can get the full effect of how amazing here feet are . She’s a 19 ur old babe with size 9 soles !</p>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div> -->"
 
 /***/ }),
 
@@ -1000,7 +1004,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "body {\n  margin: 0; }\n\n#myVideo {\n  min-width: 100%;\n  min-height: 100%;\n  background: black;\n  opacity: 0.3; }\n\n.content {\n  padding: 250px;\n  position: absolute;\n  bottom: 0;\n  color: #f1f1f1;\n  width: 100%;\n  padding-bottom: 230px;\n  text-align: center; }\n\n@media screen and (max-width: 992px) {\n  .content {\n    padding-left: 0;\n    padding-right: 0;\n    padding-top: 0;\n    padding-bottom: 300px; }\n  .content > .container > h2 {\n    margin-left: 30px;\n    margin-right: 30px;\n    font-size: 25px !important;\n    margin-bottom: -20px; }\n  .content > .container > h4 {\n    margin-left: 30px;\n    margin-right: 30px;\n    font-size: 20px !important; } }\n\n@media screen and (max-width: 600px) {\n  .content {\n    padding-bottom: 300px; } }\n\n@media screen and (max-width: 500px) {\n  .content {\n    padding-bottom: 320px; } }\n\n@media screen and (max-width: 450px) {\n  .content {\n    padding-bottom: 320px; } }\n\n@media screen and (max-width: 400px) {\n  .content {\n    padding-bottom: 350px; } }\n", ""]);
 
 // exports
 
@@ -1048,7 +1052,7 @@ var LandingComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/purchase/purchase.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\r\n    <div class=\"page-header\" style=\"background-image: url('../assets/img/bg1.jpg');\">\r\n        <div class=\"filter\"></div>\r\n            <div class=\"container\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-lg-4 col-sm-6 mr-auto ml-auto\">\r\n                        <div class=\"card card-register\">\r\n\r\n                            <label style=\"text-align: center\"><b>$24.95 / Month</b></label>\r\n\r\n                            <button class=\"btn btn-danger btn-block btn-round\" (click)=\"btnPurchaseClick()\">Purchase Now!</button>\r\n                            <br>\r\n                            <br>\r\n                            <img src=\"../assets/img/authfoot.png\" />\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"footer register-footer text-center\">\r\n                    <h6>&copy;{{loginDate | date: 'yyyy'}} Barefeetmodels.com</h6>\r\n                </div>\r\n            </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"wrapper\">\n    <div class=\"page-header\" style=\"background-image: url('../assets/img/bg1.jpg');\">\n        <div class=\"filter\"></div>\n            <div class=\"container\">\n                <div class=\"row\">\n                    <div class=\"col-lg-4 col-sm-6 mr-auto ml-auto\">\n                        <div class=\"card card-register\">\n\n                            <label style=\"text-align: center\"><b>$24.95 / Month</b></label>\n\n                            <button class=\"btn btn-danger btn-block btn-round\" (click)=\"btnPurchaseClick()\">Purchase Now!</button>\n                            <br>\n                            <br>\n                            <img src=\"../assets/img/authfoot.png\" />\n                        </div>\n                    </div>\n                </div>\n                <div class=\"footer register-footer text-center\">\n                    <h6>&copy;{{loginDate | date: 'yyyy'}} Barefeetmodels.com</h6>\n                </div>\n            </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1092,7 +1096,7 @@ var PurchaseComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/shared/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"footer section-true-black\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <nav class=\"footer-nav\">\r\n                <ul>\r\n                    <li><a [routerLink]=\"['/']\">Home</a></li>\r\n                    <li><a [routerLink]=\"['/purchase']\">Purchase</a></li>\r\n                    <li class=\"nav-item\" *ngIf=\"!isLoggedIn()\">\r\n                        <a [routerLink]=\"['/login']\" class=\"nav-link\">Login</a>\r\n                    </li>\r\n                    <li class=\"nav-item\" *ngIf=\"isLoggedIn()\">\r\n                        <a [routerLink]=\"['/logout']\" class=\"nav-link\">Logout - {{ userName }}</a>\r\n                    </li>\r\n                </ul>\r\n            </nav>\r\n            <div class=\"credits ml-auto\">\r\n                <span class=\"copyright\">\r\n                    © {{footerDate | date: 'yyyy'}}, Barefeetmodels.com\r\n                </span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</footer>\r\n"
+module.exports = "<footer class=\"footer section-true-black\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <nav class=\"footer-nav\">\n                <ul>\n                    <li><a [routerLink]=\"['/']\">Home</a></li>\n                    <li><a [routerLink]=\"['/purchase']\">Purchase</a></li>\n                    <li class=\"nav-item\" *ngIf=\"!isLoggedIn()\">\n                        <a [routerLink]=\"['/login']\" class=\"nav-link\">Login</a>\n                    </li>\n                    <li class=\"nav-item\" *ngIf=\"isLoggedIn()\">\n                        <a [routerLink]=\"['/logout']\" class=\"nav-link\">Logout - {{ userName }}</a>\n                    </li>\n                </ul>\n            </nav>\n            <div class=\"credits ml-auto\">\n                <span class=\"copyright\">\n                    © {{footerDate | date: 'yyyy'}}, Barefeetmodels.com\n                </span>\n            </div>\n        </div>\n    </div>\n</footer>\n"
 
 /***/ }),
 
@@ -1163,7 +1167,7 @@ var FooterComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/shared/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg fixed-top navbar-transparent\" color-on-scroll=\"500\">\r\n    <div class=\"container\">\r\n        <div class=\"navbar-translate\">\r\n            <a class=\"navbar-brand\" [routerLink]=\"['/']\">Barefeetmodels.com</a>\r\n            <button class=\"navbar-toggler navbar-burger\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarToggler\" aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" (click)=\"sidebarToggle()\">\r\n                <span class=\"navbar-toggler-bar\"></span>\r\n                <span class=\"navbar-toggler-bar\"></span>\r\n                <span class=\"navbar-toggler-bar\"></span>\r\n            </button>\r\n        </div>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarToggler\">\r\n            <ul class=\"navbar-nav ml-auto\">\r\n                <li class=\"nav-item\" *ngIf=\"!isLoggedIn()\">\r\n                    <a [routerLink]=\"['/login']\" class=\"nav-link\">Login</a>\r\n                </li>\r\n                <li class=\"nav-item\" *ngIf=\"isLoggedIn()\">\r\n                    <a [routerLink]=\"['/logout']\" class=\"nav-link\">Logout - {{ userName }}</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a [routerLink]=\"['/purchase']\" class=\"nav-link\">Purchase</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg fixed-top navbar-transparent\" color-on-scroll=\"500\">\n    <div class=\"container\">\n        <div class=\"navbar-translate\">\n            <a class=\"navbar-brand\" [routerLink]=\"['/']\">Barefeetmodels.com</a>\n            <button class=\"navbar-toggler navbar-burger\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarToggler\" aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" (click)=\"sidebarToggle()\">\n                <span class=\"navbar-toggler-bar\"></span>\n                <span class=\"navbar-toggler-bar\"></span>\n                <span class=\"navbar-toggler-bar\"></span>\n            </button>\n        </div>\n        <div class=\"collapse navbar-collapse\" id=\"navbarToggler\">\n            <ul class=\"navbar-nav ml-auto\">\n                <li class=\"nav-item\" *ngIf=\"!isLoggedIn()\">\n                    <a [routerLink]=\"['/login']\" class=\"nav-link\">Login</a>\n                </li>\n                <li class=\"nav-item\" *ngIf=\"isLoggedIn()\">\n                    <a [routerLink]=\"['/logout']\" class=\"nav-link\">Logout - {{ userName }}</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a [routerLink]=\"['/purchase']\" class=\"nav-link\">Purchase</a>\n                </li>\n            </ul>\n        </div>\n    </div>\n</nav>\n"
 
 /***/ }),
 
