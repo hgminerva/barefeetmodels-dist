@@ -593,7 +593,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "ul {\n  padding: 0;\n  width: 1200px;\n  margin: 20px auto; }\n\nli {\n  display: inline; }\n\n.tn {\n  margin: 6px;\n  border: 1px solid #555; }\n", ""]);
+exports.push([module.i, "ul {\n  padding: 0;\n  width: 1200px;\n  margin: 20px auto; }\n\nli {\n  display: inline; }\n\n.tn {\n  margin: 6px;\n  border: 1px solid #555; }\n\n.img-custom {\n  border-radius: 0%;\n  width: 100%;\n  height: 200px; }\n\n@media screen and (max-width: 991px) {\n  .img-custom {\n    width: 100%;\n    height: auto;\n    margin-bottom: 20px; } }\n", ""]);
 
 // exports
 
@@ -633,7 +633,7 @@ var DashboardComponent = /** @class */ (function () {
     }
     DashboardComponent.prototype.ngOnInit = function () {
         if (localStorage.getItem("username") == null) {
-            this.router.navigate(['/']);
+            this.router.navigate(['login']);
         }
         else {
             this.getVideos();
@@ -716,7 +716,7 @@ var DashboardDetailComponent = /** @class */ (function () {
     }
     DashboardDetailComponent.prototype.ngOnInit = function () {
         if (localStorage.getItem("username") == null) {
-            this.router.navigate(['/']);
+            this.router.navigate(['login']);
         }
         else {
             this.getVideo(+this.route.snapshot.params['id']);
@@ -750,7 +750,7 @@ var DashboardDetailComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/dashboard/dashboard.list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <br>\n            <br>\n            <ul id=\"videoList\">\n                <li *ngFor=\"let video of videos\">\n                    <a [routerLink]=\"['/dashboardDetail',video.id]\">\n                        <img src=\"{{video.fileGifUrl}}\" class=\"tn\" width=\"200\" height=\"160\">\n                    </a>\n                </li>\n            </ul>\n            <div class=\"text-center\">\n                <button class=\"btn btn-success btn-round\" id=\"btnLoadMoreVideos\" (click)=\"btnLoadMoreVideosClick()\">Load more videos...</button>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <br>\n            <br>\n            <ng-container *ngFor=\"let video of videos; let i = index\" [attr.data-index]=\"i\">\n                <ng-container *ngIf=\"(i + 1) % 4 == 0\">\n                    <div class=\"row\">\n                        <div class=\"col-lg-3\">\n                            <a [routerLink]=\"['/dashboardDetail',video.id]\">\n                                <img src=\"{{ videos[i - 3].fileGifUrl }}\" class=\"img-rounded img-custom\">\n                            </a>\n                        </div>\n                        <div class=\"col-lg-3\">\n                            <a [routerLink]=\"['/dashboardDetail',video.id]\">\n                                <img src=\"{{ videos[i - 2].fileGifUrl }}\" class=\"img-rounded img-custom\">\n                            </a>\n                        </div>\n                        <div class=\"col-lg-3\">\n                            <a [routerLink]=\"['/dashboardDetail',video.id]\">\n                                <img src=\"{{ videos[i - 1].fileGifUrl }}\" class=\"img-rounded img-custom\">\n                            </a>\n                        </div>\n                        <div class=\"col-lg-3\">\n                            <a [routerLink]=\"['/dashboardDetail',video.id]\">\n                                <img src=\"{{ videos[i].fileGifUrl }}\" class=\"img-rounded img-custom\">\n                            </a>\n                        </div>\n                    </div>\n                    <br>\n                </ng-container>\n            </ng-container>\n            <div class=\"text-center\">\n                <button class=\"btn btn-success btn-round\" id=\"btnLoadMoreVideos\" (click)=\"btnLoadMoreVideosClick()\">Load more videos...</button>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -791,7 +791,7 @@ var DashboardListComponent = /** @class */ (function () {
     }
     DashboardListComponent.prototype.ngOnInit = function () {
         if (localStorage.getItem("username") == null) {
-            this.router.navigate(['/']);
+            this.router.navigate(['login']);
         }
         else {
             this.getVideos();
@@ -992,7 +992,7 @@ var DashboardService = /** @class */ (function () {
 /***/ "../../../../../src/app/landing/landing.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<video autoplay muted loop id=\"myVideo\">\n    <source src=\"../../assets/videos/bg-video-2.mp4\" type=\"video/mp4\"> Your browser does not support HTML5 video.\n</video>\n<div class=\"content\">\n    <div class=\"container\">\n        <h2>Welcome to Barefeetmodels.com, the premier feet fetish website! </h2>\n        <h4>Featuring exclusive videos in high definition!</h4>\n        <br /><br />\n        <a [routerLink]=\"['/dashboard']\" class=\"btn btn-outline-neutral btn-round\">\n            <i class=\"fa fa-play\"></i> Watch video\n        </a>\n    </div>\n</div>\n\n<!-- <div class=\"page-header\" data-parallax=\"true\" style=\"background-image: url('../assets/img/bg1.jpg');\">\n    <div class=\"filter\"></div>\n    \n</div> -->\n<!-- \n<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <div class=\"row example-page\">\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\n                    <a [routerLink]=\"['/login']\">\n                        <img src=\"../../assets/img/examples/e1.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\n                        <p>Haylie was a ballerina and gymnast ! Her feet are breath taking she’s a 19 year old college girl and model ! It’s like a Barbie doll came to life and took off her shoes ! In this video I pour baby oil gel all over her feet as she shows off her incredible toe spread and tight scrunches </p>\n                    </a>\n                </div>\n\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\n                    <a [routerLink]=\"['/login']\">\n                        <img src=\"../../assets/img/examples/e2.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\n                        <p>This is Nicole from the video “ super sole show “ I shot this so her fans can get the full effect of how amazing here feet are . She’s a 19 ur old babe with size 9 soles !</p>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div> -->"
+module.exports = "<video autoplay muted loop id=\"myVideo\">\n    <source src=\"../../assets/videos/bg-video-2.mp4\" type=\"video/mp4\"> Your browser does not support HTML5 video.\n</video>\n<div class=\"content\">\n    <div class=\"container\">\n        <h2>Welcome to Barefeetmodels.com</h2>\n        <h4>The premier feet fetish website! Featuring exclusive videos in high definition!</h4>\n        <br /><br />\n        <a [routerLink]=\"['/dashboard']\" class=\"btn btn-outline-neutral btn-round\">\n            <i class=\"fa fa-play\"></i> Watch video\n        </a>\n    </div>\n</div>\n\n<!-- <div class=\"page-header\" data-parallax=\"true\" style=\"background-image: url('../assets/img/bg1.jpg');\">\n    <div class=\"filter\"></div>\n    \n</div> -->\n<!-- \n<div class=\"main\">\n    <div class=\"section section-dark\">\n        <div class=\"container\">\n            <div class=\"row example-page\">\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\n                    <a [routerLink]=\"['/login']\">\n                        <img src=\"../../assets/img/examples/e1.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\n                        <p>Haylie was a ballerina and gymnast ! Her feet are breath taking she’s a 19 year old college girl and model ! It’s like a Barbie doll came to life and took off her shoes ! In this video I pour baby oil gel all over her feet as she shows off her incredible toe spread and tight scrunches </p>\n                    </a>\n                </div>\n\n                <div class=\"col-md-6 text-center\" routerLinkActive=\"active\">\n                    <a [routerLink]=\"['/login']\">\n                        <img src=\"../../assets/img/examples/e2.jpg\" alt=\"Rounded Image\" class=\"img-rounded img-responsive\" style=\"width: 100%\">\n                        <p>This is Nicole from the video “ super sole show “ I shot this so her fans can get the full effect of how amazing here feet are . She’s a 19 ur old babe with size 9 soles !</p>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div> -->"
 
 /***/ }),
 
@@ -1004,7 +1004,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0; }\n\n#myVideo {\n  min-width: 100%;\n  min-height: 100%;\n  background: black;\n  opacity: 0.3; }\n\n.content {\n  padding: 250px;\n  position: absolute;\n  bottom: 0;\n  color: #f1f1f1;\n  width: 100%;\n  padding-bottom: 230px;\n  text-align: center; }\n\n@media screen and (max-width: 992px) {\n  .content {\n    padding-left: 0;\n    padding-right: 0;\n    padding-top: 0;\n    padding-bottom: 300px; }\n  .content > .container > h2 {\n    margin-left: 30px;\n    margin-right: 30px;\n    font-size: 25px !important;\n    margin-bottom: -20px; }\n  .content > .container > h4 {\n    margin-left: 30px;\n    margin-right: 30px;\n    font-size: 20px !important; } }\n\n@media screen and (max-width: 600px) {\n  .content {\n    padding-bottom: 300px; } }\n\n@media screen and (max-width: 500px) {\n  .content {\n    padding-bottom: 320px; } }\n\n@media screen and (max-width: 450px) {\n  .content {\n    padding-bottom: 320px; } }\n\n@media screen and (max-width: 400px) {\n  .content {\n    padding-bottom: 350px; } }\n", ""]);
+exports.push([module.i, "body {\n  margin: 0; }\n\n#myVideo {\n  min-width: 100%;\n  min-height: 100%;\n  background: #4e4e4e;\n  opacity: 0.2; }\n\n.content {\n  padding: 250px;\n  position: absolute;\n  bottom: 0;\n  color: #f1f1f1;\n  width: 100%;\n  padding-bottom: 230px;\n  text-align: center; }\n\n@media screen and (max-width: 992px) {\n  .content {\n    padding-left: 0;\n    padding-right: 0;\n    padding-top: 0;\n    padding-bottom: 300px; }\n  .content > .container > h2 {\n    margin-left: 30px;\n    margin-right: 30px;\n    font-size: 25px !important;\n    margin-bottom: -20px; }\n  .content > .container > h4 {\n    margin-left: 30px;\n    margin-right: 30px;\n    font-size: 20px !important; } }\n\n@media screen and (max-width: 600px) {\n  .content {\n    padding-bottom: 300px; } }\n\n@media screen and (max-width: 500px) {\n  .content {\n    padding-bottom: 320px; } }\n\n@media screen and (max-width: 450px) {\n  .content {\n    padding-bottom: 320px; } }\n\n@media screen and (max-width: 400px) {\n  .content {\n    padding-bottom: 350px; } }\n", ""]);
 
 // exports
 
