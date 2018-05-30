@@ -383,11 +383,12 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__account_account_login_component__ = __webpack_require__("../../../../../src/app/account/account.login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__account_account_logout_component__ = __webpack_require__("../../../../../src/app/account/account.logout.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__purchase_purchase_component__ = __webpack_require__("../../../../../src/app/purchase/purchase.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__shared_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/shared/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__shared_footer_footer_component__ = __webpack_require__("../../../../../src/app/shared/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__account_account_service__ = __webpack_require__("../../../../../src/app/account/account.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__dashboard_dashboard_service__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__purchase_purchase_pornhub_component__ = __webpack_require__("../../../../../src/app/purchase/purchase.pornhub.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__shared_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/shared/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__shared_footer_footer_component__ = __webpack_require__("../../../../../src/app/shared/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__account_account_service__ = __webpack_require__("../../../../../src/app/account/account.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__dashboard_dashboard_service__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -423,6 +424,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 // components
 
 
@@ -438,16 +440,17 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_22__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_15__landing_landing_component__["a" /* LandingComponent */],
                 __WEBPACK_IMPORTED_MODULE_19__account_account_login_component__["a" /* AccountLoginComponent */],
                 __WEBPACK_IMPORTED_MODULE_20__account_account_logout_component__["a" /* AccountLogoutComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__shared_navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__shared_footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__shared_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__shared_footer_footer_component__["a" /* FooterComponent */],
                 __WEBPACK_IMPORTED_MODULE_16__dashboard_dashboard_component__["a" /* DashboardComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__dashboard_dashboard_list_component__["a" /* DashboardListComponent */],
                 __WEBPACK_IMPORTED_MODULE_18__dashboard_dashboard_detail_component__["a" /* DashboardDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__purchase_purchase_component__["a" /* PurchaseComponent */]
+                __WEBPACK_IMPORTED_MODULE_21__purchase_purchase_component__["a" /* PurchaseComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__purchase_purchase_pornhub_component__["a" /* PurchasePornhubComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
@@ -463,11 +466,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_11__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */], __WEBPACK_IMPORTED_MODULE_12_ng2_toastr_ng2_toastr__["ToastModule"].forRoot()
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_25__account_account_service__["a" /* AccountService */],
-                __WEBPACK_IMPORTED_MODULE_26__dashboard_dashboard_service__["a" /* DashboardService */],
+                __WEBPACK_IMPORTED_MODULE_26__account_account_service__["a" /* AccountService */],
+                __WEBPACK_IMPORTED_MODULE_27__dashboard_dashboard_service__["a" /* DashboardService */],
                 { provide: __WEBPACK_IMPORTED_MODULE_13_ng2_toastr__["ToastOptions"], useClass: __WEBPACK_IMPORTED_MODULE_14__app_toast_options__["a" /* AppToastOptions */] }
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_22__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_23__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -492,12 +495,14 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__account_account_login_component__ = __webpack_require__("../../../../../src/app/account/account.login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__account_account_logout_component__ = __webpack_require__("../../../../../src/app/account/account.logout.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__purchase_purchase_component__ = __webpack_require__("../../../../../src/app/purchase/purchase.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__purchase_purchase_pornhub_component__ = __webpack_require__("../../../../../src/app/purchase/purchase.pornhub.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -518,7 +523,8 @@ var routes = [
     { path: 'dashboardDetail/:id', component: __WEBPACK_IMPORTED_MODULE_6__dashboard_dashboard_detail_component__["a" /* DashboardDetailComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__account_account_login_component__["a" /* AccountLoginComponent */] },
     { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_8__account_account_logout_component__["a" /* AccountLogoutComponent */] },
-    { path: 'purchase', component: __WEBPACK_IMPORTED_MODULE_9__purchase_purchase_component__["a" /* PurchaseComponent */] }
+    { path: 'purchase', component: __WEBPACK_IMPORTED_MODULE_9__purchase_purchase_component__["a" /* PurchaseComponent */] },
+    { path: 'purchase/pornhub', component: __WEBPACK_IMPORTED_MODULE_10__purchase_purchase_pornhub_component__["a" /* PurchasePornhubComponent */] }
     // { path: 'home',             component: HomeComponent },
     // { path: 'user-profile',     component: ProfileComponent },
     // { path: 'signup',           component: SignupComponent },
@@ -1090,6 +1096,49 @@ var PurchaseComponent = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=purchase.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/purchase/purchase.pornhub.component.html":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "../../../../../src/app/purchase/purchase.pornhub.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PurchasePornhubComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PurchasePornhubComponent = /** @class */ (function () {
+    function PurchasePornhubComponent() {
+    }
+    PurchasePornhubComponent.prototype.ngOnInit = function () {
+        window.location.href = 'https://www.magentatrader.com/purchase/autoredirect?affiliate=pornhub';
+    };
+    PurchasePornhubComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-purchase',
+            template: __webpack_require__("../../../../../src/app/purchase/purchase.pornhub.component.html")
+        }),
+        __metadata("design:paramtypes", [])
+    ], PurchasePornhubComponent);
+    return PurchasePornhubComponent;
+}());
+
+//# sourceMappingURL=purchase.pornhub.component.js.map
 
 /***/ }),
 
