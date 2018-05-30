@@ -518,7 +518,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 // import { SignupComponent } from './signup/signup.component';
 // import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 var routes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_4__landing_landing_component__["a" /* LandingComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_4__landing_landing_component__["a" /* LandingComponent */], pathMatch: 'full' },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_list_component__["a" /* DashboardListComponent */] },
     { path: 'dashboardDetail/:id', component: __WEBPACK_IMPORTED_MODULE_6__dashboard_dashboard_detail_component__["a" /* DashboardDetailComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__account_account_login_component__["a" /* AccountLoginComponent */] },
